@@ -12,6 +12,9 @@ public class Punto3DImp implements Punto3D{
     }
 
     public void setX(Double x) {
+        if (x==null){
+            throw new IllegalArgumentException("Valor nulo");
+        }
         this.x = x;
     }
 
@@ -20,6 +23,9 @@ public class Punto3DImp implements Punto3D{
     }
 
     public void setY(Double y) {
+        if (y==null){
+            throw new IllegalArgumentException("Valor nulo");
+        }
         this.y = y;
     }
 
@@ -28,6 +34,9 @@ public class Punto3DImp implements Punto3D{
     }
 
     public void setZ(Double z) {
+        if (z==null){
+            throw new IllegalArgumentException("Valor nulo");
+        }
         this.z = z;
     }
     public Double distanciaADosPuntos3D(Punto3D p){
@@ -36,9 +45,9 @@ public class Punto3DImp implements Punto3D{
 
 
     public Punto3DImp(Double x, Double y, Double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        setX(x);
+        setY(y);
+        setZ(z);
     }
 
     public Punto3DImp() {
